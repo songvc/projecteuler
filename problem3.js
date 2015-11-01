@@ -1,28 +1,18 @@
-function isPrime(n){
-	if (n < 2){
-		return false;
-	}
-
-	for (var i = 2; i < n; i++){
-		if(n % i == 0){
-			return false;
-			break;			
-		}
-	}
-	return true;
-}
-
-
 function findLargestPrimeFactor(n){
-	var primeList = [];
+	var primeFactor = [];
 
-	for (var i = 0; i < n; i++){
-		if (isPrime(i)){
-			primeList.push(i);
+	for (var i = 2; i <= n; i++){
+		if (n % i == 0){
+			while (n % i == 0){
+				primeFactor.push(i);
+				n = n / i ;
+			}
 		}
 	}
 
-	console.log(primeList);
+	console.log(primeFactor);
+	console.log(Math.max.apply(null,(primeFactor)));
 }
+
 
 findLargestPrimeFactor(600851475143);
