@@ -42,7 +42,6 @@ function smallestMultiple(){
 	}
 
 	// multiply 
-
 	for(var j in count){
 		smallest *= Math.pow(j, count[j]);
 	}
