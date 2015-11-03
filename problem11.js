@@ -17,5 +17,22 @@ console.log(grids[0][0]);
 console.log(grids[19][19]);
 
 function largestProduct(){
+	
+	var products = [];
+	
+	// case1: left & right
+	for (var i = 0; i < grids.length; i++){
+		for (var j = 0; j < grids[i].length-3; j++){
+			products.push(grids[i][j]*grids[i][j+1]*grids[i][j+2]*grids[i][j+3]);
+		}
+	}
+	// case2: up & down
+	for (var i = 0; i < grids.length; i++){
+		for (var j = 0; j < grids[i].length-3; j++){
+			products.push(grids[j][i]*grids[j+1][i]*grids[j+2][i]*grids[j+3][i]);
+		}
+	}
 
+	// case: diagonal
+	
 }
