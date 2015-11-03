@@ -1,5 +1,6 @@
 function findPrimes(limit){
-	var sequence=[];
+	var sequence=[],
+	upperbound = Math.sqrt(limit);
 	
 	//Using Sieve of Eratosthenes Algorithms
 
@@ -10,7 +11,13 @@ function findPrimes(limit){
 
 
 	//find indexes of prime multiples and remove them
-	for (var i = 0; i < Math.sqrt(limit); i++){
+	for (var i =2; i < upperbound; i++){
+		sequence[i]
+	}
+
+
+
+	for (var i = 0; i < upperbound; i++){
 		console.log(sequence.length);
 		for (var j = 2; j < limit/sequence[i]; j++){
 			console.log(sequence[i] + " " +j + " " + sequence[i]*j);
