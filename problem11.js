@@ -13,8 +13,6 @@ function splitGrid(str, row, col){
 
 
 var grids = splitGrid(input,20,20);
-console.log(grids[0][0]);
-console.log(grids[19][19]);
 
 function largestProduct(){
 	
@@ -33,6 +31,21 @@ function largestProduct(){
 		}
 	}
 
-	// case: diagonal
-	
+	// case3: diagonal left -> right
+	for (var i = 3; i < grids.length; i++){
+		for (var j = 0; j < grids[i].length-3; j++){
+			products.push(grids[i][j]*grids[i-1][j+1]*grids[i-2][j+2]*grids[i-3][j+3])
+		}
+	}
+
+	// case4: diagonal right to left
+	for (var i = 3; i < grids.length; i++){
+		for (var j = grids[i].length-1; 2 < j; j--){
+			products.push(grids[i][j]*grids[i-1][j-1]*grids[i-2][j-2]*grids[i-3][j-3])
+		}
+	}
+
+	return Math.max.apply(null,products);
 }
+
+console.log(largestProduct());
