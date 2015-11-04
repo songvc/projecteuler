@@ -1,11 +1,17 @@
 function countDivisible(n){
 	var num = 0;
 
-	for(var i = 1; i <= n; i++){
+	for(var i = 1; i < Math.sqrt(n); i++){
 		if (n%i ==0){
 			num++;
 		}
 	}
+	num = num * 2
+	
+	if (n % Math.sqrt(n)==0){
+		num++;
+	}
+	
 	return num;
 }
 
@@ -31,4 +37,3 @@ function findTriangle(limit){
 	return triangle(x);
 }
 
-console.log(findTriangle(500));
