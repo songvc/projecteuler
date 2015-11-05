@@ -2,8 +2,33 @@ var input = "3710728753390210279879799822083759024651013574025046376937677490009
 
 
 function findLargeSum(str){
-	var split = str.split(/(\d{50})/).filter(function(el) {return el.length !=0} );
-	console.log(split);
+	
+	var split = str.split(/(\d{50})/).filter(function(el) {
+		return el.length !=0
+	});
+
+	var	sum_of_first_ten = 0, 
+		sum_nth_digit = 0,
+		result_nth_digit = [];
+
+	// add all 1st digits, 2nd digits, etc
+	for (var i = 0; i < split[0].length; i++){
+		for(var j = 0; j < split.length; j++){
+			sum_nth_digit += parseInt(split[j][i]);
+		}	
+		result_nth_digit.push(sum);
+		sum = 0;
+	}
+
+	// multiply nth digit sum by 10^(8-n) 
+	// if (8-n) is negative, you get rid of the 
+	
+	for (var )
+
+
+	
+
+	// return sum.toString().slice(0,10);
 }
 
-findLargeSum(input);
+console.log(findLargeSum(input));
