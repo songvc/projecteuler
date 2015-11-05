@@ -16,19 +16,20 @@ function findLargeSum(str){
 		for(var j = 0; j < split.length; j++){
 			sum_nth_digit += parseInt(split[j][i]);
 		}	
-		result_nth_digit.push(sum);
-		sum = 0;
+		result_nth_digit.push(sum_nth_digit);
+		sum_nth_digit = 0;
 	}
 
+	console.log(result_nth_digit);
+	
 	// multiply nth digit sum by 10^(8-n) 
-	// if (8-n) is negative, you get rid of the 
 	
-	for (var )
+	for (var i = 0; i < 50; i++){
+		sum_of_first_ten += result_nth_digit[i] * Math.pow(10, 8-(i+1));
+	}
 
-
-	
-
-	// return sum.toString().slice(0,10);
+	// ignore decimall points
+	return Math.floor(sum_of_first_ten);
 }
 
 console.log(findLargeSum(input));
